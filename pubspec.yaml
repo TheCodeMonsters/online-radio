@@ -17,14 +17,13 @@ dependencies:
   dio: ^3.0.9
   dio_http_cache: ^0.2.6
   cached_network_image: ^2.0.0
-  flutter_svg: ^0.18.0
+  flutter_svg: ^0.22.0
 
   cupertino_icons: ^0.1.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
 
 flutter:
   uses-material-design: true

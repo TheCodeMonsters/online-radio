@@ -14,7 +14,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Online Radio'),
+        title: Text('Miko Mandante Radio'),
       ),
       body: BlocBuilder<StationsBloc, StationsState>(
         condition: (context, state) {
@@ -33,7 +33,8 @@ class HomeScreen extends StatelessWidget {
               children: <Widget>[
                 TitleHeader(
                   title: 'Top Stations',
-                  status: BlocBuilder<PlayerBloc, PlayerState>(builder: (context, state) {
+                  status: BlocBuilder<PlayerBloc, PlayerState>(
+                      builder: (context, state) {
                     if (state is PausedState || state is StoppedState) {
                       return PausedStatus();
                     } else {
@@ -45,7 +46,8 @@ class HomeScreen extends StatelessWidget {
                   child: NotificationListener<ScrollNotification>(
                     onNotification: (ScrollNotification scrollInfo) {
                       if (state is StationsFetchedState &&
-                          scrollInfo.metrics.pixels == scrollInfo.metrics.maxScrollExtent) {
+                          scrollInfo.metrics.pixels ==
+                              scrollInfo.metrics.maxScrollExtent) {
                         context.bloc<StationsBloc>().add(FetchNextStations());
                         return true;
                       } else {
@@ -59,10 +61,13 @@ class HomeScreen extends StatelessWidget {
                             name: stations[index].name,
                             imageUrl: stations[index].imageUrl,
                             onTap: () {
-                              context.bloc<PlayerBloc>().add(PlayEvent(stations[index]));
+                              context
+                                  .bloc<PlayerBloc>()
+                                  .add(PlayEvent(stations[index]));
                             },
                           );
-                        } else if (index == stations.length && !state.hasFetchedAll) {
+                        } else if (index == stations.length &&
+                            !state.hasFetchedAll) {
                           return Center(
                             child: Padding(
                               padding: const EdgeInsets.only(bottom: 4),

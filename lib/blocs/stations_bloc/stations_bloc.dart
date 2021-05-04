@@ -11,9 +11,10 @@ part 'stations_state.dart';
 class StationsBloc extends Bloc<StationsEvent, StationsState> {
   final StationRepository stationRepository;
   final int _pageSize = 15;
-  final String _countryCode = 'au';
+  final String _countryCode = 'ni';
 
-  StationsBloc({@required this.stationRepository}) : assert(stationRepository != null);
+  StationsBloc({@required this.stationRepository})
+      : assert(stationRepository != null);
 
   @override
   StationsState get initialState => InitialState();
@@ -25,8 +26,8 @@ class StationsBloc extends Bloc<StationsEvent, StationsState> {
     if (event is FetchStations) {
       yield (LoadingStationsState());
       try {
-        final List<Station> stations =
-            await stationRepository.getStationsByCountryPaginated(_countryCode, 0, _pageSize);
+        final List<Station> stations = await stationRepository
+            .getStationsByCountryPaginated(_countryCode, 0, _pageSize);
         yield StationsFetchedState(
           stations: stations,
           stationPageIndex: 0,
@@ -41,8 +42,8 @@ class StationsBloc extends Bloc<StationsEvent, StationsState> {
       final List<Station> oldStations = currentState.stations;
       yield FetchingNextStationsState();
       try {
-        final List<Station> stations =
-            await stationRepository.getStationsByCountryPaginated(_countryCode, index, _pageSize);
+        final List<Station> stations = await stationRepository
+            .getStationsByCountryPaginated(_countryCode, index, _pageSize);
         yield StationsFetchedState(
           stations: oldStations..addAll(stations),
           stationPageIndex: index,

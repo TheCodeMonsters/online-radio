@@ -14,7 +14,12 @@ class StationFavicon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(border: Border.all(color: Theme.of(context).textTheme.body1.color.withAlpha(40))),
+      decoration: BoxDecoration(
+        border: Border.all(
+          // body
+          color: Theme.of(context).textTheme.bodyText2.color.withAlpha(40),
+        ),
+      ),
       child: CachedNetworkImage(
         height: height ?? 48,
         width: width ?? 48,
@@ -25,7 +30,7 @@ class StationFavicon extends StatelessWidget {
             height: height ?? 48,
             width: width ?? 48,
             semanticsLabel: 'Music',
-            color: Theme.of(context).textTheme.body1.color,
+            color: Theme.of(context).textTheme.bodyText2.color,
           );
         },
         errorWidget: (context, _, __) {
@@ -34,7 +39,7 @@ class StationFavicon extends StatelessWidget {
             height: height ?? 48,
             width: width ?? 48,
             semanticsLabel: 'Music',
-            color: Theme.of(context).textTheme.body1.color,
+            color: Theme.of(context).textTheme.bodyText2.color,
           );
         },
       ),

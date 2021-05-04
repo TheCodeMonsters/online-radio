@@ -6,10 +6,12 @@ import 'package:online_radio/station.dart';
 class RadioBrowserRepository extends StationRepository {
   final Dio _dio;
   static final String _baseUrl = 'https://fr1.api.radio-browser.info';
-  static final String _stationsByCountryCodeUrl = '$_baseUrl/json/stations/bycountrycodeexact/';
+  static final String _stationsByCountryCodeUrl =
+      '$_baseUrl/json/stations/bycountrycodeexact/';
 
   RadioBrowserRepository(this._dio) {
-    _dio.interceptors.add(DioCacheManager(CacheConfig(baseUrl: _baseUrl)).interceptor);
+    _dio.interceptors
+        .add(DioCacheManager(CacheConfig(baseUrl: _baseUrl)).interceptor);
   }
 
   @override
@@ -20,7 +22,8 @@ class RadioBrowserRepository extends StationRepository {
   ) async {
     final stationsFromCountryCodeUrl = _stationsByCountryCodeUrl + countryCode;
     final Response rawStationsJson = await _dio.get(
-      _buildUrlToSortByPopularityWithPagination(stationsFromCountryCodeUrl, offset, limit),
+      _buildUrlToSortByPopularityWithPagination(
+          stationsFromCountryCodeUrl, offset, limit),
       options: buildCacheOptions(
         Duration(days: 1),
       ),
@@ -35,7 +38,8 @@ class RadioBrowserRepository extends StationRepository {
     return Future.value(stations);
   }
 
-  String _buildUrlToSortByPopularityWithPagination(String url, int offset, int limit) {
+  String _buildUrlToSortByPopularityWithPagination(
+      String url, int offset, int limit) {
     return '$url?hidebroken=true&order=clickcount&reverse=true&offset=$offset&limit=$limit';
   }
 }
