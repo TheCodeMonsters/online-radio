@@ -20,7 +20,9 @@ class StationsFetchedState extends StationsState {
     @required this.stations,
     @required this.stationPageIndex,
     @required this.hasFetchedAll,
-  }) : assert(stations != null && stationPageIndex != null && hasFetchedAll != null);
+  }) : assert(stations != null &&
+            stationPageIndex != null &&
+            hasFetchedAll != null);
 }
 
 class StationsFetchErrorState extends StationsState {}

@@ -6,6 +6,7 @@ import 'package:online_radio/repository/stations_repository.dart';
 import 'package:online_radio/station.dart';
 
 part 'stations_event.dart';
+
 part 'stations_state.dart';
 
 class StationsBloc extends Bloc<StationsEvent, StationsState> {

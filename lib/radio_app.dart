@@ -24,7 +24,8 @@ class RadioApp extends StatelessWidget {
             create: (context) => PlayerBloc(radioPlayer: radioPlayer),
           ),
           BlocProvider<StationsBloc>(
-            create: (context) => StationsBloc(stationRepository: stationRepository),
+            create: (context) =>
+                StationsBloc(stationRepository: stationRepository),
           ),
         ],
         child: HomeScreen(),
