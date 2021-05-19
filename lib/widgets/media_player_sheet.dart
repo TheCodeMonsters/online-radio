@@ -50,7 +50,7 @@ class MediaPlayerSheet extends StatelessWidget {
                 child: IconButton(
                   icon: mediaButtonIcon,
                   onPressed: onMediaButtonPress,
-                )),
+                ),),
           )
         ],
       ),

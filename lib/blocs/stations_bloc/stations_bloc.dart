@@ -6,13 +6,12 @@ import 'package:online_radio/repository/stations_repository.dart';
 import 'package:online_radio/station.dart';
 
 part 'stations_event.dart';
-
 part 'stations_state.dart';
 
 class StationsBloc extends Bloc<StationsEvent, StationsState> {
   final StationRepository stationRepository;
   final int _pageSize = 15;
-  final String _countryCode = 'ni';
+  final String _countryCode = 'us';
 
   StationsBloc({@required this.stationRepository})
       : assert(stationRepository != null);

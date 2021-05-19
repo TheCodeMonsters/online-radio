@@ -7,7 +7,6 @@ import 'package:online_radio/radio/radio_state.dart';
 import 'package:online_radio/station.dart';
 
 part 'player_event.dart';
-
 part 'player_state.dart';
 
 class PlayerBloc extends Bloc<PlayerEvent, PlayerState> {

@@ -14,7 +14,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('RadioApp'),
+        title: Text('La Rocola Dev'),
       ),
       body: BlocBuilder<StationsBloc, StationsState>(
         condition: (context, state) {

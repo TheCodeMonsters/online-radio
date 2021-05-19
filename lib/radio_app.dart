@@ -15,7 +15,7 @@ class RadioApp extends StatelessWidget {
     final RadioPlayer radioPlayer = JustAudioPlayer();
     final StationRepository stationRepository = RadioBrowserRepository(Dio());
     return MaterialApp(
-      title: 'Miko Mandante Radio',
+      title: 'La Rocola Musical',
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
       home: MultiBlocProvider(
