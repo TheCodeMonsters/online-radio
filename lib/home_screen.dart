@@ -123,7 +123,7 @@ class HomeScreen extends StatelessWidget {
               title: currentStation.name,
               imageUrl: currentStation.imageUrl,
               mediaButtonIcon: Icon(
-                Icons.pause_outlined,
+                Icons.pause_circle_filled,
                 size: 32,
               ),
               onMediaButtonPress: () {
