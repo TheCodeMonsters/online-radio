@@ -46,11 +46,12 @@ class MediaPlayerSheet extends StatelessWidget {
           Expanded(
             flex: 1,
             child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: IconButton(
-                  icon: mediaButtonIcon,
-                  onPressed: onMediaButtonPress,
-                ),),
+              padding: const EdgeInsets.all(16.0),
+              child: IconButton(
+                icon: mediaButtonIcon,
+                onPressed: onMediaButtonPress,
+              ),
+            ),
           )
         ],
       ),

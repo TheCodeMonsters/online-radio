@@ -123,7 +123,7 @@ class HomeScreen extends StatelessWidget {
               title: currentStation.name,
               imageUrl: currentStation.imageUrl,
               mediaButtonIcon: Icon(
-                Icons.pause,
+                Icons.pause_outlined,
                 size: 32,
               ),
               onMediaButtonPress: () {
@@ -136,7 +136,7 @@ class HomeScreen extends StatelessWidget {
               title: currentStation.name,
               imageUrl: currentStation.imageUrl,
               mediaButtonIcon: Icon(
-                Icons.play_arrow,
+                Icons.play_arrow_outlined,
                 size: 32,
               ),
               onMediaButtonPress: () {
